@@ -1,10 +1,19 @@
 import React from 'react'
+import { uniqueId, seedGenerator } from '../services/seido-helpers';
 
 //Making Hello World into a component
 function HelloWorld02() {
+
+  const greeting = "Good morning";
+  const address = {city: "Oslo", country: "Norway"};
+  const paragraph = <p>My special paragraph</p>;
+  
+  const _seeder = new seedGenerator();
+  const q = _seeder.quote;
+
   return (
-    <>
-    <h1>A function component</h1>
+    <div>
+    <h1>{_seeder.latinSentence} A function component</h1>
     <h1 id="my-heading">
       text before span tag:&nbsp;
       <span>
@@ -12,7 +21,10 @@ function HelloWorld02() {
       </span>
       &nbsp;:text after span tag 
     </h1>
-    </>
+    <p>I live in {address.city} which is in {address.country}</p>
+    {paragraph}
+    <p>{q.quote}</p>
+    </div>
     
     /*
     React.createElement(

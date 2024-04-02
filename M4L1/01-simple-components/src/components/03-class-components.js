@@ -1,10 +1,19 @@
 import React, { Component } from 'react'
+import { uniqueId, seedGenerator } from '../services/seido-helpers';
 
 export default class HelloWorld03 extends Component {
   render() {
+
+
+    const greeting = "Good morning";
+    const address = {city: "Oslo", country: "Norway"};
+    const paragraph = <p>My special paragraph</p>;
+  
+    const _seeder = new seedGenerator();
+    const q = _seeder.quote;
     return (
         <>
-        <h1>A class component</h1>
+        <h1>{greeting} A class component</h1>
         <h1 id="my-heading">
         text before span tag:&nbsp;
         <span>
@@ -12,6 +21,9 @@ export default class HelloWorld03 extends Component {
         </span>
         &nbsp;:text after span tag 
         </h1>
+        <p>I live in {address.city} which is in {address.country}</p>
+        {paragraph}
+        <p>{q.quote}</p>
       </>
     )
   }

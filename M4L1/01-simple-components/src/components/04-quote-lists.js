@@ -13,6 +13,7 @@ export function QuoteListFunc04() {
 
     return (
         <div>{title}
+            <p>The list has {_quotes.length} quotes</p>
             {/*Comments are JS so within brackets */}
             <ul>
                 {
@@ -26,7 +27,7 @@ export function QuoteListFunc04() {
 export class QuoteListClass04 extends Component {
     render() {
         const _seeder = new seedGenerator();
-        const _quotes = _seeder.allQuotes;
+        const _quotes = _seeder.allQuotes.filter(q => q.quote.toLowerCase().includes('love'));
 
         let title = <h1>QuoteListClass04</h1>;
 

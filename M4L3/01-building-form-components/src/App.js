@@ -11,8 +11,10 @@ import './App.css';
 
 function App() {
 
+    const _seeder = new seedGenerator();
+
     //React state lifting. The person is state in App and passed as props to used from <FormControlled03> (props downwards flow)
-    const [person, setPerson] = useState();
+    const [person, setPerson] = useState(new Person().seed(_seeder));
 
     //React event bubbling, onSave and onUndo called from FormValidation05 (events upwards flow)
     const onSave = (e) => 

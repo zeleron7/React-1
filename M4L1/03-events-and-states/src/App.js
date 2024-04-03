@@ -27,20 +27,22 @@ function App() {
     */
 
     //Add states
-    /*
+    
     <>
     <TextCounterFunc03/>
     <TextCounterClass03/>
     <TextCounterFunc03 text="Hello, my name is Martin"/>
     <TextCounterClass03 text="Hello, my name is Martin"/>
     </>
-    */
+    
 
     //Color exercise
+    /*
     <>
     <ColorBoxesFunc04/>
     <ColorBoxesClass04/>
     </>
+    */
   );
 }
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import {Save, ArrowCounterclockwise} from 'react-bootstrap-icons'
 
-function Form01(props) {
+export function Form01(props) {
 
   const onSave = (e) => 
   { 
@@ -73,5 +73,3 @@ function Form01(props) {
     </>
   )
 }
-
-export default Form01

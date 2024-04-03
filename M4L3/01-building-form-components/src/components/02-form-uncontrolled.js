@@ -1,7 +1,7 @@
 import React from 'react'
 import {Save, ArrowCounterclockwise} from 'react-bootstrap-icons'
 
-function FormUncontrolled02(props) {
+export function FormUncontrolled02(props) {
 
   const onSave = (e) => 
   { 
@@ -87,5 +87,3 @@ function FormUncontrolled02(props) {
     </>
   )
 }
-
-export default FormUncontrolled02

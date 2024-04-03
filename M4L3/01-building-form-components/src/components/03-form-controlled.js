@@ -1,12 +1,14 @@
 import React from 'react'
 import {Save, ArrowCounterclockwise} from 'react-bootstrap-icons'
 
-function FormControlled03(props) {
+export function FormControlled03(props) {
+
+  const friend = props.friend;
 
   const onSave = (e) => 
   { 
     //We are going to add validation here later
-     
+    e.person = friend;
     props.onSave(e);
   }  
 
@@ -28,42 +30,42 @@ function FormControlled03(props) {
               <div className="row g-3">
                 <div className="col-sm-6">
                   <label htmlFor="firstName" className="form-label">First name</label>
-                  <input type="text" className="form-control" id="firstName" value={props.friend.firstName} required/>
+                  <input type="text" className="form-control" id="firstName" value={friend.firstName} required/>
                 </div>
 
                 <div className="col-sm-6">
                   <label htmlFor="lastName" className="form-label">Last name</label>
-                  <input type="text" className="form-control" id="lastName" value={props.friend.lastName} required/>
+                  <input type="text" className="form-control" id="lastName" value={friend.lastName} required/>
                 </div>
             
                 <div className="col-sm-6">
                   <label htmlFor="email" className="form-label">Email</label>
-                  <input type="email" className="form-control" id="email" value={props.friend.email} required/>
+                  <input type="email" className="form-control" id="email" value={friend.email} required/>
                 </div>
                 <div className="col-sm-6">
                   <label htmlFor="birthday" className="form-label">Birthday</label>
-                  <input type="date" className="form-control" id="birthday" value={props.friend.birthDate} required/>
+                  <input type="date" className="form-control" id="birthday" value={friend.birthDate} required/>
                 </div>
 
                 <div className="row g-3 visible">
                   <div className="col-12">
                     <label htmlFor="street" className="form-label">Address</label>
-                    <input type="text" className="form-control" id="street" value={props.friend.address.street} required/>
+                    <input type="text" className="form-control" id="street" value={friend.address.street} required/>
                   </div>
 
                   <div className="col-md-3">
                     <label htmlFor="zip" className="form-label">Zip</label>
-                    <input type="text" className="form-control" id="zip" value={props.friend.address.zipCode} required/>
+                    <input type="text" className="form-control" id="zip" value={friend.address.zipCode} required/>
                   </div>
 
                   <div className="col-md-4">
                     <label htmlFor="city" className="form-label">City</label>
-                    <input type="text" className="form-control" id="city" value={props.friend.address.city} required />
+                    <input type="text" className="form-control" id="city" value={friend.address.city} required />
                   </div>
 
                   <div className="col-md-5">
                     <label htmlFor="country" className="form-label">Country</label>
-                    <input type="text"  className="form-control" id="country" value={props.friend.address.country} required/>
+                    <input type="text"  className="form-control" id="country" value={friend.address.country} required/>
                   </div>
                 </div>
               </div>
@@ -74,5 +76,3 @@ function FormControlled03(props) {
     </>
   )
 }
-
-export default FormControlled03

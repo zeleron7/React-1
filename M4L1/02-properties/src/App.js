@@ -10,7 +10,7 @@ function App() {
   return (
   
   //Using Props
-  /*  
+  /*
   <>
     <PropsFunc01 name="Harry" friend="Sam"/>
     <PropsClass01 name="Hemronie" friend="Sara"/>
@@ -32,28 +32,26 @@ function App() {
   <PropsClass02a friend="Idefix"/>
   <PropsClass02b name="Idefix"/>
   </>
-
-
-  <ColorBoxes/>
-  <ColorBoxes color="orange" />
   */
 
   //Color exercise props and default props
-  /*
+  
   <>
   <ColorBoxes01/>
   <ColorBoxes02 color="orange" />
   <ColorBoxes03 color={["orange", "green", "blue"]}  />
   </>
-  */
+
 
   //PropTypes
+  /*
   <>
   <ColorBoxes04 />
   <ColorBoxes04 number="30"/>
   <ColorBoxes04 color={["orange", "green", "blue"]} number={15} title="Hello wonderful world" />
   <ColorBoxes04 number={30} title="Hello wonderful world" />
   </>
+  */
 );
 }
 

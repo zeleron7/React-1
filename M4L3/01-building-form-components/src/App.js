@@ -30,7 +30,7 @@ function App() {
 
     return (
       <>
-       <Form01 onSave={onSave} onUndo={onUndo}/>
+       <FormHandleChange04 friend={person} onSave={onSave} onUndo={onUndo}/>
       </>
     );
   }

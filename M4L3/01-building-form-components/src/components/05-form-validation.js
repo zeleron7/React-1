@@ -57,6 +57,14 @@ export function FormValidation05(props) {
     }
   }  
 
+  const onUndo = (e) => 
+  {
+    console.log (`onUndo invoked`);
+
+    setFriend(props.friend);
+    props.onUndo(e);
+  }  
+
   return (
     <>
     <div className="container px-4 py-4" id="edit-item">
@@ -65,7 +73,7 @@ export function FormValidation05(props) {
         <button className="btn btn-primary-outline" onClick={onSave}>
           <Save className="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"/>
         </button>
-        <button className="btn btn-primary-outline" onClick={props.onUndo}>
+        <button className="btn btn-primary-outline" onClick={onUndo}>
           <ArrowCounterclockwise className="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"/>
         </button>
       </h1>

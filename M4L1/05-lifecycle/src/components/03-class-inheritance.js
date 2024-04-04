@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { uniqueId, seedGenerator } from '../services/seido-helpers';
-import { LifeCycleLogger02 } from './02-lifecycle-log';
+import { LifeCycleLogger02 } from './02-lifecycle-log-class';
 
 export class ClassInheritance03 extends LifeCycleLogger02 {
   constructor() {

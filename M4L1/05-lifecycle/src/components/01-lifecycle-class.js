@@ -36,6 +36,12 @@ export class LifeCycle01 extends Component {
     console.log('componentDidMount');
   }
 
+  componentWillUnmount() {
+    //https://reactjs.org/docs/react-component.html#componentwillunmount
+ 
+    console.log('componentWillUnmount');
+  }
+
   render() {
     return (
     <>

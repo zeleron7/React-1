@@ -42,5 +42,8 @@ for both Func and Class components:
    		func comp - const [clickCount, setClickCount] = useState (0);
 		class comp - this.state = {clickCount: 0};  
 
+3. Make a new Component Latin that consists of a <p> tag and a <button>
+   - each time you click on the button a new bogus latin sentence should be presented in the <p> tag
+
 */
 

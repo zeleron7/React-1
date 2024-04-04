@@ -56,7 +56,9 @@ export function AlbumsWebApiView() {
 
   //#region to read the WebApi async to initialize a React component
   const [serviceData, setServiceData] = useState();
-  useEffect(() => {
+  useEffect(
+    //equvalent to componentDidMount
+    () => {
       async function readWebApi() {
         const data = await service.readAlbumAsync(id);
         setServiceData(data);

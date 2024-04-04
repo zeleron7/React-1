@@ -6,6 +6,10 @@ import {FormUncontrolled02} from './components/02-form-uncontrolled';
 import {FormControlled03} from './components/03-form-controlled';
 import {FormHandleChange04} from './components/04-form-handle-change';
 import {FormValidation05} from './components/05-form-validation';
+import {UseFormInPage06} from './components/06-use-form-in-page';
+import {UseBootstrapModal07} from './components/07-use-bootstrap-modal';
+import {UseFormInModal07a} from './components/07a-use-form-in-modal';
+import {UseFormInModal07b} from './components/07b-use-form-in-modal';
 
 import './App.css';
 
@@ -30,7 +34,7 @@ function App() {
 
     return (
       <>
-       <FormHandleChange04 friend={person} onSave={onSave} onUndo={onUndo}/>
+       <UseBootstrapModal07/>
       </>
     );
   }
@@ -40,5 +44,10 @@ function App() {
        <FormControlled03 friend={person} onSave={onSave} onUndo={onUndo}/>
        <FormHandleChange04 friend={person} onSave={onSave} onUndo={onUndo}/>
        <FormValidation05 friend={person} onSave={onSave} onUndo={onUndo}/>
-*/
+
+       <UseFormInPage06/>
+       <BootstrapModal07/>
+       <UseFormInModal07a/>
+       <UseFormInModal07b/>
+       */
 export default App;

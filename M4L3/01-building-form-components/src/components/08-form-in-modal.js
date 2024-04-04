@@ -2,23 +2,10 @@ import React, {useState} from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
-import {seedGenerator } from '../services/seido-helpers';
-import Person from '../models/person';
-import {FormValidation05} from './05-form-validation';
 
-export function UseFormInModal07b() {
+  export function FormInModal08(props) {
 
-    const _seeder = new seedGenerator();
-    const p = new Person().seed(_seeder);
-
-    const [show, setShow] = useState(false);
-    const [person, setPerson] = useState(p);
-
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-
-
-    const [friend, setFriend] = useState(p);
+    const [friend, setFriend] = useState(props.friend);
 
     const handleChange = (e) => {
   
@@ -57,34 +44,36 @@ export function UseFormInModal07b() {
         }
       setFriend(f);
     }
-
-
-    //React event bubbling, onSave and onUndo called from FormValidation05 (events upwards flow)
+    
     const onSave = (e) => 
     {
-      setShow(false)
-      console.log (`onSave invoked`);
+      const form = document.querySelector('.needs-validation')
+      if (!form.checkValidity()) {
+        e.preventDefault();
+        e.stopPropagation();
+        form.classList.add('was-validated')
+      }
+      else{
+        props.setShow(false);
+        
+        e.person = friend;
+        props.onSave(e);
+      }
+    }  
+  
+    const onUndo = (e) => 
+    {
+      props.setShow(false);
 
-      setPerson(friend);
+      setFriend(props.friend);
+      props.onUndo(e);
     }  
 
     return (
       <>
-      <ul>
-        <li>Name: {person.firstName} {person.lastName} </li>
-        <li>Birthdate: {person.birthDate} </li>
-        <li>Email: {person.email} </li>
-        <li>Address: {person.address.street} </li>
-        <li>City: {person.address.zipCode} {person.address.city}</li>
-        <li>Country: {person.Country} </li>
-      </ul>
-      <Button variant="primary" onClick={handleShow}>
-        Edit details
-      </Button>
-
       <Modal
-        show={show}
-        onHide={handleClose}
+        show={props.show}
+        onHide={onUndo}
         backdrop="static"
         keyboard={false}>
         <Modal.Header closeButton>
@@ -165,7 +154,7 @@ export function UseFormInModal07b() {
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant="secondary" onClick={onUndo}>
             Close
           </Button>
           <Button variant="primary" onClick={onSave}>
@@ -176,15 +165,3 @@ export function UseFormInModal07b() {
     </>
     );
   }
-
-  /*
-          <ul>
-          <li>Name: {person.firstName} {person.lastName} </li>
-          <li>Birthdate: {person.birthDate} </li>
-          <li>Email: {person.email} </li>
-          <li>Address: {person.address.street} </li>
-          <li>City: {person.address.zipCode} {person.address.city}</li>
-          <li>Country: {person.Country} </li>
-        </ul>
-       <FormValidation05 friend={person} onSave={onSave} onUndo={onUndo}/>
-*/

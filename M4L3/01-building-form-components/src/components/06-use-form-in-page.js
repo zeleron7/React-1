@@ -34,7 +34,7 @@ export function UseFormInPage06() {
           <li>Email: {person.email} </li>
           <li>Address: {person.address.street} </li>
           <li>City: {person.address.zipCode} {person.address.city}</li>
-          <li>Country: {person.Country} </li>
+          <li>Country: {person.address.country} </li>
         </ul>
        <FormValidation05 friend={person} onSave={onSave} onUndo={onUndo}/>
       </>

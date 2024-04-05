@@ -113,7 +113,7 @@ export class GreetQuoteClass07 extends Component {
 }
 
 /* Exercise
-1. modify the event handler for onClickTimeOfDay from exercise 05-event-lifting
+1. modify the the code so a click on the time of day changes the greeting and greeting message.
    - a click should toggle morning->afternoon->evening->morning
    - The greeting and the greeting message should change accordingly to
     Good ... Harry,  Have a woulderful ... where ... is the result fo the click toggle

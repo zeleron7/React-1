@@ -13,11 +13,11 @@ import { ReadWebApiFunc06, ReadWebApiClass06} from './components/06-using-lifecy
 function App() {
   return (
   //Override a Lifecycle event
-  
+  /*
   <>
   <LifeCycle01/>
   </>
-  
+  */
 
   //Using inheritance to make a parent class that logs lifecycles
   /*
@@ -43,12 +43,12 @@ function App() {
   */
 
   //Using Lifecyles async example
-  /*
+  
   <>
   <ReadWebApiFunc06/>
   <ReadWebApiClass06/> 
   </>
-  */
+  
   );
 }
 

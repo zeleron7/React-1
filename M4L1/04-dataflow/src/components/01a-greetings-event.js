@@ -17,11 +17,18 @@ export function GreetingsFunc01a(props) {
             props.onClick(e);
     }
 
+    const onToDClick = (e) => {
+        console.log(`ToD clicked: ${e.target}`);  
+
+        if (props.onToDClick)
+            props.onToDClick(e);
+    }
+
     return (
         <div>
-            {(timeOfDay==="morning"&&<h1>Good morning <span onClick={onClick}>{name}</span></h1>)||
-            (timeOfDay==="afternoon"&&<h1>Good afternoon <span onClick={onClick}>{name}</span></h1>)||
-            (timeOfDay==="evening"&&<h1>Good evening <span onClick={onClick}>{name}</span></h1>) ||
+            {(timeOfDay==="morning"&&<h1><span onClick={onToDClick}>Good morning</span> <span onClick={onClick}>{name}</span></h1>)||
+            (timeOfDay==="afternoon"&&<h1><span onClick={onToDClick}>Good afternoon</span> <span onClick={onClick}>{name}</span></h1>)||
+            (timeOfDay==="evening"&&<h1><span onClick={onToDClick}>Good evening</span> <span onClick={onClick}>{name}</span></h1>) ||
             <h1>Hello <span onClick={onClick}>{name}</span></h1>}
 
             <p>{greetings}</p>

@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import {seedGenerator } from './services/seido-helpers';
 import Person from './models/person';
+import Animal from './models/animal';
+
 import {Form01} from './components/01-form';
 import {FormUncontrolled02} from './components/02-form-uncontrolled';
 import {FormControlled03} from './components/03-form-controlled';
@@ -9,6 +11,7 @@ import {FormValidation05} from './components/05-form-validation';
 import {UseFormInPage06} from './components/06-use-form-in-page';
 import {UseBootstrapModal07} from './components/07-bootstrap-modal';
 import {UseFormInModal08a} from './components/08a-use-form-in-modal';
+import {FormAnimal09} from './components/09-form-animal';
 
 import './App.css';
 
@@ -16,6 +19,7 @@ function App() {
 
     const _seeder = new seedGenerator();
     const person = new Person().seed(_seeder);
+    const animal = new Animal().seed(_seeder);
 
     //React event bubbling, onSave and onUndo called from FormValidation05 (events upwards flow)
     const onSave = (e) => 
@@ -31,9 +35,21 @@ function App() {
       console.log (`onUndo invoked`);
     }  
 
+
+    const onSaveAnimal = (e) => 
+    {
+      console.log (`onSaveAnimal invoked`);
+      
+      console.log(animal);   //original person
+      console.log(e.animal); //returned by FormUncontrolled02
+    }  
+
+
     return (
       <>
-       <Form01 onSave={onSave} onUndo={onUndo}/>
+       <FormHandleChange04 friend={person} onSave={onSave} onUndo={onUndo}/>
+       <FormAnimal09 animal={animal} onSave={onSaveAnimal} onUndo={onUndo}/> 
+
       </>
     );
   }

@@ -15,5 +15,14 @@ npx create-react-app $1
 cd $1
 npm start
 
+#in the project directory install bootstrap
+npm install react-bootstrap bootstrap
+npm install react-bootstrap-icons
+
+#using bootstrap
+#in index.js import
+#import 'bootstrap/dist/css/bootstrap.min.css'
+#import './css/grid.css';
+
 #for curl in windows powershell see
 #https://www.delftstack.com/howto/powershell/run-curl-command-via-powershell/

@@ -35,6 +35,13 @@ export default function Person() {
     },
     
     seedMany: function (_sgen, nrOfItems) {
-      return _sgen.toArray(nrOfItems, this.createRandom)
+      const persons = [];
+      
+      for (let index = 0; index < nrOfItems; index++) {
+        const p = new Person().seed(_sgen);
+        persons.push(p);        
+      }
+
+        return persons;
     }
   }

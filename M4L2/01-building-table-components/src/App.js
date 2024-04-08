@@ -1,5 +1,6 @@
 import React from 'react';
-import { uniqueId } from './services/seido-helpers';
+import { seedGenerator, uniqueId } from './services/seido-helpers';
+import Person from './models/person';
 import TableAsClass01 from './components/01-table-as-class-th';
 import TableAsClass02 from './components/02-table-as-class-th-key';
 import TableAsClass03 from './components/03-table-as-class';
@@ -11,6 +12,9 @@ import TableAsFunc02 from './components/02-table-as-func-th-key';
 import TableAsFunc03 from './components/03-table-as-func';
 import TableAsFunc04 from './components/04-table-as-func-state';
 import TableAsFunc05 from './components/05-table-as-func-dblclick';
+
+import {PersonTable06} from './components/06-person-table';
+import {PersonTable07} from './components/07-person-table-bs';
 
 import './css/table.css';
 
@@ -42,7 +46,15 @@ const tableData = [
   }  
 ];
 
+const pheader = ["first name", "last name", "city", "country", "birthday"];
+
+const _seeder = new seedGenerator();
+const _person = new Person().seed(_seeder);
+const _persons = new Person().seedMany(_seeder,10);
+
 function App() {
+
+  console.log(_persons);
 
   const onDoubleClick = (e) => 
   {
@@ -54,10 +66,13 @@ function App() {
   return (
     <>
         <h1>Add component one-by-one and study</h1>
-        <h2>Table as a class components</h2>
-                
-        <br/>
         <h2>Table as a func component</h2>
+        <TableAsClass03 headers={tableHeaders} initialData={tableData}/>
+
+        <PersonTable06 headers={pheader}/>
+        <PersonTable07/>
+
+
 
     </>
   );

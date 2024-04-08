@@ -6,7 +6,7 @@ export default function TableAsFunc04(props)
 {
 
   const [data, setData] = useState(props.initialData);
-  const [sortedColumn, setSortedColumn] = useState(null);
+  const [sortedColumn, setSortedColumn] = useState();
   const [descending, setDescending] = useState(false);
 
   const sortByColumn = (e) => {
@@ -75,3 +75,13 @@ TableAsFunc04.propTypes = {
 function clone(o) {
   return JSON.parse(JSON.stringify(o));
 }
+
+
+/* Exercise
+In PersonTable06
+1. Recognize header click
+   -  Assign a unique cellindex (0,1,2 etc) to each cell in the header in an element property called data-cell-index
+   -  Assign a click handler to the header
+   -  Create a state sortedColumn and assign it to the cellindex value of the clicked header cell
+   -  Make a console.log(sortedColumn)
+*/

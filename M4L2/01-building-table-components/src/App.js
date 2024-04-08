@@ -14,6 +14,10 @@ import TableAsFunc04 from './components/04-table-as-func-state';
 import TableAsFunc05 from './components/05-table-as-func-dblclick';
 
 import {PersonTable06} from './components/06-person-table';
+import {PersonTable06a} from './components/06a-person-table';
+import {PersonTable06b} from './components/06b-person-table';
+import {PersonTable06c} from './components/06c-person-table';
+import {PersonTable06d} from './components/06d-person-table';
 import {PersonTable07} from './components/07-person-table-bs';
 
 import './css/table.css';
@@ -54,7 +58,7 @@ const _persons = new Person().seedMany(_seeder,10);
 
 function App() {
 
-  console.log(_persons);
+//  console.log(_persons);
 
   const onDoubleClick = (e) => 
   {
@@ -67,9 +71,9 @@ function App() {
     <>
         <h1>Add component one-by-one and study</h1>
         <h2>Table as a func component</h2>
-        <TableAsClass03 headers={tableHeaders} initialData={tableData}/>
+        <TableAsFunc04 headers={tableHeaders} initialData={tableData}/>
 
-        <PersonTable06 headers={pheader}/>
+        <PersonTable06a headers={pheader} initialData={_persons}/>
         <PersonTable07/>
 
 

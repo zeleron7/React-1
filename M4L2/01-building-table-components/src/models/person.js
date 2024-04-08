@@ -20,9 +20,9 @@ export default function Person() {
     
     seed: function (_sgen) {
       const p = new Person();
-      p.id = uniqueId();
-      p.firstName = _sgen.firstName;
-      p.lastName = _sgen.lastName;
+      p.id = uniqueId();                       
+      p.firstName = _sgen.firstName;            
+      p.lastName = _sgen.lastName;              
       p.birthDate = _sgen.dateAndTime(1970, 2000).toLocaleDateString('sv-SE');
       p.email = _sgen.email(p.firstName, p.lastName)
   

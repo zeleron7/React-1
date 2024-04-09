@@ -1,5 +1,5 @@
-import React, {useState} from 'react'
-import {Save, ArrowCounterclockwise} from 'react-bootstrap-icons'
+import React, { useState } from 'react'
+import { Save, ArrowCounterclockwise } from 'react-bootstrap-icons'
 
 export function FormHandleChange04(props) {
 
@@ -9,8 +9,8 @@ export function FormHandleChange04(props) {
 
     const id = e.target.id;
     const val = e.target.value;
-    const f = {...friend};
-    f.address = {...friend.address};
+    const f = { ...friend };
+    f.address = { ...friend.address };
 
     switch (id) {
       case 'firstName':
@@ -39,33 +39,31 @@ export function FormHandleChange04(props) {
         break;
       default:
         return;
-      }
+    }
     setFriend(f);
   }
-  
-  const onSave = (e) => 
-  { 
+
+  const onSave = (e) => {
     //We are going to add validation here later 
     e.person = friend;
     props.onSave(e);
-  }  
-  const onUndo = (e) => 
-  {
-    console.log (`onUndo invoked`);
+  }
+  const onUndo = (e) => {
+    console.log(`onUndo invoked`);
 
     setFriend(props.friend);
     props.onUndo(e);
-  }  
+  }
   return (
     <>
       <div className="container px-4 py-4" id="edit-item">
         <h1>
-          Edit details of my friend {props.friend.firstName} 
+          Edit details of my friend {props.friend.firstName}
           <button className="btn btn-primary-outline" onClick={onSave}>
-            <Save className="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"/>
+            <Save className="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em" />
           </button>
           <button className="btn btn-primary-outline" onClick={onUndo}>
-            <ArrowCounterclockwise className="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"/>
+            <ArrowCounterclockwise className="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em" />
           </button>
         </h1>
         <div className="row row-cols-1 row-cols-lg-4 align-items-stretch g-4 py-5">
@@ -74,32 +72,32 @@ export function FormHandleChange04(props) {
               <div className="row g-3">
                 <div className="col-sm-6">
                   <label htmlFor="firstName" className="form-label">First name</label>
-                  <input type="text" className="form-control" id="firstName" value={friend.firstName} onChange={handleChange} required/>
+                  <input type="text" className="form-control" id="firstName" value={friend.firstName} onChange={handleChange} required />
                 </div>
 
                 <div className="col-sm-6">
                   <label htmlFor="lastName" className="form-label">Last name</label>
-                  <input type="text" className="form-control" id="lastName" value={friend.lastName} onChange={handleChange} required/>
+                  <input type="text" className="form-control" id="lastName" value={friend.lastName} onChange={handleChange} required />
                 </div>
-            
+
                 <div className="col-sm-6">
                   <label htmlFor="email" className="form-label">Email</label>
-                  <input type="email" className="form-control" id="email" value={friend.email} onChange={handleChange} required/>
+                  <input type="email" className="form-control" id="email" value={friend.email} onChange={handleChange} required />
                 </div>
                 <div className="col-sm-6">
                   <label htmlFor="birthday" className="form-label">Birthday</label>
-                  <input type="date" className="form-control" id="birthday" value={friend.birthDate} onChange={handleChange} required/>
+                  <input type="date" className="form-control" id="birthday" value={friend.birthDate} onChange={handleChange} required />
                 </div>
 
                 <div className="row g-3 visible">
                   <div className="col-12">
                     <label htmlFor="street" className="form-label">Address</label>
-                    <input type="text" className="form-control" id="street" value={friend.address.street} onChange={handleChange} required/>
+                    <input type="text" className="form-control" id="street" value={friend.address.street} onChange={handleChange} required />
                   </div>
 
                   <div className="col-md-3">
                     <label htmlFor="zip" className="form-label">Zip</label>
-                    <input type="text" className="form-control" id="zip" value={friend.address.zipCode} onChange={handleChange} required/>
+                    <input type="text" className="form-control" id="zip" value={friend.address.zipCode} onChange={handleChange} required />
                   </div>
 
                   <div className="col-md-4">
@@ -109,11 +107,11 @@ export function FormHandleChange04(props) {
 
                   <div className="col-md-5">
                     <label htmlFor="country" className="form-label">Country</label>
-                    <input type="text"  className="form-control" id="country" value={friend.address.country} onChange={handleChange} required/>
+                    <input type="text" className="form-control" id="country" value={friend.address.country} onChange={handleChange} required />
                   </div>
                 </div>
               </div>
-            </form>            
+            </form>
           </div>
         </div>
       </div>

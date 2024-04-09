@@ -77,7 +77,7 @@ import Modal from 'react-bootstrap/Modal';
         backdrop="static"
         keyboard={false}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title> Edit details {props.friend.firstName}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <div className="row row-cols-1 row-cols-lg-4 align-items-stretch g-4 py-5">

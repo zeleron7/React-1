@@ -11,7 +11,12 @@ import {FormValidation05} from './components/05-form-validation';
 import {UseFormInPage06} from './components/06-use-form-in-page';
 import {UseBootstrapModal07} from './components/07-bootstrap-modal';
 import {UseFormInModal08a} from './components/08a-use-form-in-modal';
+
 import {FormAnimal09} from './components/09-form-animal';
+import {FormAnimal09a} from './components/09a-form-animal';
+import {FormAnimal09b} from './components/09b-form-animal';
+import {AnimalPage10} from './components/10-form-animal-in-page';
+import {AnimalPage10a} from './components/10a-form-animal-in-page';
 
 import './App.css';
 
@@ -28,6 +33,7 @@ function App() {
       
       console.log(person);   //original person
       console.log(e.person); //returned by FormUncontrolled02
+      
     }  
 
     const onUndo = (e) => 
@@ -47,9 +53,7 @@ function App() {
 
     return (
       <>
-       <FormHandleChange04 friend={person} onSave={onSave} onUndo={onUndo}/>
-       <FormAnimal09 animal={animal} onSave={onSaveAnimal} onUndo={onUndo}/> 
-
+         <UseFormInModal08a/>
       </>
     );
   }
@@ -65,5 +69,10 @@ function App() {
        <UseBootstrapModal07/>
        
        <UseFormInModal08a/>
+
+             <FormAnimal09 animal={animal} onSave={onSaveAnimal} onUndo={onUndo}/> 
+                   <AnimalPage10/> 
+                         <AnimalPage10a/> 
+
        */
 export default App;

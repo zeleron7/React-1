@@ -32,3 +32,12 @@ export function PersonTable06(props) {
     </>
   )
 }
+
+
+/* Steps to complete 6a - 6d, explained in each step
+ 1. Recognize header click
+ 2. Recognize a click in the sortedColumn and toggle search order from desc to asc
+ 3. Move tabledata to a state
+ 4. Recognize which property in object person the clicked column correspond to. 
+ 5. Sort sortedData according to clicked header
+*/

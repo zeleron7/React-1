@@ -73,7 +73,7 @@ function App() {
         <h2>Table as a func component</h2>
         <TableAsFunc04 headers={tableHeaders} initialData={tableData}/>
 
-        <PersonTable06a headers={pheader} initialData={_persons}/>
+        <PersonTable06 headers={pheader} initialData={_persons}/>
         <PersonTable07/>
 
 

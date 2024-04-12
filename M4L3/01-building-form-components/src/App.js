@@ -17,6 +17,7 @@ import {FormAnimal09a} from './components/09a-form-animal';
 import {FormAnimal09b} from './components/09b-form-animal';
 import {AnimalPage10} from './components/10-form-animal-in-page';
 import {AnimalPage10a} from './components/10a-form-animal-in-page';
+import {AnimalInModal11a} from './components/11a-form-animal-in-modal';
 
 import './App.css';
 
@@ -53,7 +54,7 @@ function App() {
 
     return (
       <>
-         <UseFormInModal08a/>
+            <AnimalInModal11a/>
       </>
     );
   }

@@ -1,6 +1,26 @@
-import React from 'react'
+import React, {useState, useEffect} from "react";
+import musicService from '../services/music-group-service';
 
 export function Home() {
+
+  const [wapiInfo, setWapiInfo] = useState();
+
+  useEffect(() => {
+    //equvalent to componentDidMount
+  
+    //package the async in an async iffy
+    //Immediately-Invoked Function Expressions (IIFE), pronounced "iffy"
+    //(async () => {})()
+    (async () => {
+      console.log('componentDidMount');
+      
+      const service = new musicService(`https://appmusicwebapinet8.azurewebsites.net/api`);
+      const info = await service.readInfoAsync();
+      setWapiInfo(info);
+    })();
+  }
+  , []);
+
   return (
     <div className="container px-4 py-4" id="webapi-info">
       <h2 className="pb-2 border-bottom">Home Page</h2>
@@ -10,7 +30,7 @@ export function Home() {
         <div className="col d-flex align-items-start">
           <div>
             <h3 className="fw-bold mb-0 fs-4 text-body-emphasis">Music groups</h3>
-            <p>253 music groups</p>
+            <p>{wapiInfo?.nrSeededMusicGroups}</p>
             <a href="#list-of-friends" className="btn btn-primary">
               See details
             </a>    
@@ -19,7 +39,7 @@ export function Home() {
         <div className="col d-flex align-items-start">
           <div>
             <h3 className="fw-bold mb-0 fs-4 text-body-emphasis">Albums</h3>
-            <p>1050 albums</p>
+            <p>{wapiInfo?.nrSeededAlbums}</p>
             <a href="#list-of-friends" className="btn btn-primary">
               See details
             </a>    
@@ -28,7 +48,7 @@ export function Home() {
         <div className="col d-flex align-items-start">
           <div>
             <h3 className="fw-bold mb-0 fs-4 text-body-emphasis">Artists</h3>
-            <p>135 Artists</p>
+            <p>{wapiInfo?.nrSeededArtists}</p>
             <a href="#list-of-friends" className="btn btn-primary">
               See details
             </a>    

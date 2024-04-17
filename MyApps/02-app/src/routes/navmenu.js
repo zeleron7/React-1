@@ -22,6 +22,9 @@ export function NavMenu() {
             <LinkContainer to="/about">
                 <Nav.Link>About</Nav.Link>
             </LinkContainer>
+            <LinkContainer to="/animals">
+              <Nav.Link>Animals</Nav.Link>
+            </LinkContainer>
           </Nav>
         </Navbar.Collapse>
       </Container>
